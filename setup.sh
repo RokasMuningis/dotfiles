@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
-echo "Getting powerlevel9k theme...."
-git clone https://github.com/bhilburn/powerlevel9k.git oh-my-zsh/custom/themes/powerlevel9k
+if [[ ! -d "./oh-my-zsh/custom/themes/powerlevel9k" ]]
+	echo "Getting powerlevel9k theme...."
+	git clone https://github.com/bhilburn/powerlevel9k.git oh-my-zsh/custom/themes/powerlevel9k
+fi
+
 
 echo "sym-link .dotfiles"
 pushd homedir > /dev/null 2>&1
