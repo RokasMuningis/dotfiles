@@ -5,7 +5,7 @@ git clone https://github.com/bhilburn/powerlevel9k.git oh-my-zsh/custom/themes/p
 
 echo "sym-link .dotfiles"
 pushd homedir > /dev/null 2>&1
-$now=$(date +"%Y_%m_%d_%H_%M_%S")
+now=$(date +"%Y_%m_%d_%H_%M_%S")
 
 for file in .*; do
   if [[ $file == "." || $file == ".." ]]; then
