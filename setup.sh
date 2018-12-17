@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [[ ! -d "./oh-my-zsh/custom/themes/powerlevel9k" ]]
+if [[ ! -d "./oh-my-zsh/custom/themes/powerlevel9k" ]]; then
 	echo "Getting powerlevel9k theme...."
 	git clone https://github.com/bhilburn/powerlevel9k.git oh-my-zsh/custom/themes/powerlevel9k
 fi
