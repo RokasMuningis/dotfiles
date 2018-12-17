@@ -2,8 +2,11 @@ set tabstop=4
 set expandtab
 set shiftwidth=4
 
-execute pathogen#infect()
-syntax on
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+
+call vundle#end()
 filetype plugin indent on
-autocmd vimenter * NERDTree
-let g:NERDTreeNodeDelimiter = "\u00a0"
