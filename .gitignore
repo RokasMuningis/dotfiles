@@ -1,0 +1,3 @@
+homedir/.vim/bundle/*
+!homedir/.vim/bundle/.gitignore
+!homedir/.vim/bundle/Vundle.vim

@@ -10,3 +10,4 @@ Plugin 'scrooloose/nerdtree'
 
 call vundle#end()
 filetype plugin indent on
+autocmd vimenter * NERDTree
