@@ -14,7 +14,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'Quramy/tsuquyomi'
 Plug 'leafgarland/typescript-vim'
 
-call plug#end()
+call plug#end
 
 
 filetype plugin indent on
