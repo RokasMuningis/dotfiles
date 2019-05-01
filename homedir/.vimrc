@@ -5,6 +5,7 @@ set number
 set noerrorbells
 set novisualbell
 set background=dark
+set noshowmode
 colorscheme solarized
 
 " Vim-Plug
@@ -14,9 +15,10 @@ Plug 'vim-syntastic/syntastic'
 Plug 'scrooloose/nerdtree'
 Plug 'Quramy/tsuquyomi'
 Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'itchyny/lightline.vim'
 
 call plug#end()
-
 filetype plugin indent on
 
 " Encoding
@@ -24,20 +26,21 @@ set enc=utf-8
 set fenc=utf-8
 set termencoding=utf-8
 
-
 " Use 4 spaces
 set tabstop=4
 set expandtab
 set shiftwidth=4
 
-
 " Auto-start plugins
 autocmd vimenter * NERDTree
-set syntax=typescript
 
 " NERDTree
 let NERDTreeShowHidden=1
 let g:NERDTreeNodeDelimiter = "\u00a0"
+map <C-n> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+syntax on
 
 " TSX
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
