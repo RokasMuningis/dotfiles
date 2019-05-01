@@ -4,7 +4,8 @@ set cmdheight=1
 set number
 set noerrorbells
 set novisualbell
-
+set background=dark
+colorscheme solarized
 
 " Vim-Plug
 call plug#begin('~/.vim/plugged')
