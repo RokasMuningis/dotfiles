@@ -24,4 +24,4 @@ done
 
 popd > /dev/null 2>&1
 
-vim +PluginInstall +qall > /dev/null 2>&1
+vim +PlugInstall +qall > /dev/null 2>&1

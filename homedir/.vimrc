@@ -16,7 +16,6 @@ Plug 'leafgarland/typescript-vim'
 
 call plug#end()
 
-
 filetype plugin indent on
 
 " Encoding
