@@ -6,6 +6,7 @@ set noerrorbells
 set novisualbell
 set background=dark
 set noshowmode
+set laststatus=2
 colorscheme solarized
 
 " Vim-Plug
@@ -48,3 +49,15 @@ let g:ctrlp_custom_ignore = '\v[\/](node_modules|.git)$'
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
 
 syntax on
+
+" dark red
+hi tsxTagName guifg=#E06C75
+
+" orange
+hi tsxCloseString guifg=#F99575
+hi tsxCloseTag guifg=#F99575
+hi tsxAttributeBraces guifg=#F99575
+hi tsxEqual guifg=#F99575
+
+" yellow
+hi tsxAttrib guifg=#F8BD7F cterm=italic

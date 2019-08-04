@@ -1,14 +1,14 @@
 export PATH="$HOME/.cargo/bin:$HOME/bin:/usr/local/bin:$PATH"
 
-export ZSH="$HOME/.dotfiles/oh-my-zsh"
+# export ZSH="$HOME/.dotfiles/oh-my-zsh"
 
-ZSH_THEME="powerlevel9k/powerlevel9k"
 
 plugins=(
   git
 )
 
-source $ZSH/oh-my-zsh.sh
+source ~/.dotfiles/powerlevel10k/powerlevel10k.zsh-theme
+
 
 DEFAULT_USER=`whoami`
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs time)
