@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
 
-if [[ ! -d "./powerlevel10k" ]]; then
+if [[ ! -d ~/.dotfiles/powerlevel10k ]]; then
 	echo "Getting powerleve10k theme...."
-	git clone https://github.com/romkatv/powerlevel10k.git powerlevel10k
+	git clone https://github.com/romkatv/powerlevel10k.git ~/.dotfiles/powerlevel10k
 fi
 
+if [ ! -d ~/.dotfiles/homedir/.zsh_private ]; then
+  echo "Creating folder for private zsh configs"
+  mkdir ~/.dotfiles/homedir/.zsh_private
+fi
 
 echo "sym-link .dotfiles"
 pushd homedir > /dev/null 2>&1
