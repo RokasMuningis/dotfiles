@@ -1,2 +1,1 @@
-homedir/.vim/plugged/*
-!homedir/.vim/plugged/.gitignore
+homedir/.zsh_private
