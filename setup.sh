@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-if [[ ! -d "./oh-my-zsh/custom/themes/powerlevel9k" ]]; then
-	echo "Getting powerlevel9k theme...."
-	git clone https://github.com/bhilburn/powerlevel9k.git oh-my-zsh/custom/themes/powerlevel9k
+if [[ ! -d "./powerlevel10k" ]]; then
+	echo "Getting powerleve10k theme...."
+	git clone https://github.com/romkatv/powerlevel10k.git powerlevel10k
 fi
 
 
@@ -23,5 +23,3 @@ for file in .*; do
 done
 
 popd > /dev/null 2>&1
-
-vim +PlugInstall +qall > /dev/null 2>&1
