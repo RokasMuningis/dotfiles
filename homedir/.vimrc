@@ -9,18 +9,6 @@ set noshowmode
 set laststatus=2
 colorscheme solarized
 
-" Vim-Plug
-call plug#begin('~/.vim/plugged')
-
-Plug 'vim-syntastic/syntastic'
-Plug 'scrooloose/nerdtree'
-Plug 'Quramy/tsuquyomi'
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
-Plug 'itchyny/lightline.vim'
-Plug 'kien/ctrlp.vim'
-
-call plug#end()
 filetype plugin indent on
 
 " Encoding
@@ -32,32 +20,3 @@ set termencoding=utf-8
 set tabstop=4
 set expandtab
 set shiftwidth=4
-
-" Auto-start plugins
-autocmd vimenter * NERDTree
-
-" NERDTree
-let NERDTreeShowHidden=1
-let g:NERDTreeNodeDelimiter = "\u00a0"
-map <C-n> :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" CtrlP
-let g:ctrlp_custom_ignore = '\v[\/](node_modules|.git)$'
-
-" TSX
-autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
-
-syntax on
-
-" dark red
-hi tsxTagName guifg=#E06C75
-
-" orange
-hi tsxCloseString guifg=#F99575
-hi tsxCloseTag guifg=#F99575
-hi tsxAttributeBraces guifg=#F99575
-hi tsxEqual guifg=#F99575
-
-" yellow
-hi tsxAttrib guifg=#F8BD7F cterm=italic
