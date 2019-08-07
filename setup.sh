@@ -2,6 +2,11 @@
 
 echo "[.] Starting setup"
 
+if [[ ! -d ~/.dotfiles/nord-prompt ]]; then		
+ 	echo "  [.] Getting Nord Prompt"		
+ 	git clone https://github.com/rokasmuningis/nord-prompt.git ~/.dotfiles/nord-prompt		
+ fi
+
 if [ ! -d ~/.dotfiles/homedir/.zsh_private ]; then
   echo "  [.] Creating folder for private zsh configs"
   mkdir ~/.dotfiles/homedir/.zsh_private
