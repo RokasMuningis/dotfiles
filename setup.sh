@@ -10,6 +10,11 @@ if [ ! -d ~/.dotfiles/homedir/.zsh_private ]; then
   mkdir ~/.dotfiles/homedir/.zsh_private
 fi
 
+if [ ! -f ~/.dotfiles/config/kitty/kitty_custom.conf ]; then
+  echo "Creating file for custom kitty conf"
+  touch ~/.dotfiles/config/kitty/kitty_custom.conf
+fi
+
 pushd homedir > /dev/null 2>&1
 now=$(date +"%Y_%m_%d_%H_%M_%S")
 
@@ -17,7 +22,6 @@ now=$(date +"%Y_%m_%d_%H_%M_%S")
 ## BEGIN Setup dotfiles
 echo "sym-link .dotfiles"
 for file in .*; do
-  echo "${file}";
   if [[ $file == "." || $file == ".." ]]; then
     continue
   fi
@@ -36,7 +40,6 @@ pushd config > /dev/null 2>&1
 ## BEGIN Setup dotfiles
 echo "sym-link config/"
 for dir in *; do
-  echo "${dir}";
   if [ ! -d "${dir}" ]; then
     continue
   fi
