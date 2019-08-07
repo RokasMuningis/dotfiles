@@ -1,17 +1,19 @@
 #!/usr/bin/env bash
 
+echo "[.] Starting setup"
+
 if [[ ! -d ~/.dotfiles/powerlevel10k ]]; then
-	echo "Getting powerleve10k theme...."
+	echo "  [.] Getting powerleve10k theme...."
 	git clone https://github.com/romkatv/powerlevel10k.git ~/.dotfiles/powerlevel10k
 fi
 
 if [ ! -d ~/.dotfiles/homedir/.zsh_private ]; then
-  echo "Creating folder for private zsh configs"
+  echo "  [.] Creating folder for private zsh configs"
   mkdir ~/.dotfiles/homedir/.zsh_private
 fi
 
 if [ ! -f ~/.dotfiles/config/kitty/kitty_custom.conf ]; then
-  echo "Creating file for custom kitty conf"
+  echo "  [.] Creating file for custom kitty conf"
   touch ~/.dotfiles/config/kitty/kitty_custom.conf
 fi
 
@@ -20,7 +22,7 @@ now=$(date +"%Y_%m_%d_%H_%M_%S")
 
 
 ## BEGIN Setup dotfiles
-echo "sym-link .dotfiles"
+echo "  [.] Creating sym-links for .dotfiles"
 for file in .*; do
   if [[ $file == "." || $file == ".." ]]; then
     continue
@@ -38,7 +40,7 @@ popd > /dev/null 2>&1
 pushd config > /dev/null 2>&1
 
 ## BEGIN Setup dotfiles
-echo "sym-link config/"
+echo "  [.] Creating sym-links for configs"
 for dir in *; do
   if [ ! -d "${dir}" ]; then
     continue
@@ -53,3 +55,5 @@ done
 ## END Setup dotfiles
 
 popd > /dev/null 2>&1
+
+echo "[.] Done!"
