@@ -7,8 +7,8 @@ cd ~/./dotfiles
 ./setup.sh
 ```
 
-## Private configs
+## Custom zsh configs
 You can place your private configs in `.zsh_private` folder
 
-## Using iTerm2 color scheme
-- Just import `synthwave84-colorscheme.itermcolors` as a color-scheme to iTerm2
+## Custom kitty configs
+You can write your custom configs in `kitty_custom.conf` file
