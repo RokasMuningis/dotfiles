@@ -10,11 +10,14 @@ if [ ! -d ~/.dotfiles/homedir/.zsh_private ]; then
   mkdir ~/.dotfiles/homedir/.zsh_private
 fi
 
-echo "sym-link .dotfiles"
 pushd homedir > /dev/null 2>&1
 now=$(date +"%Y_%m_%d_%H_%M_%S")
 
+
+## BEGIN Setup dotfiles
+echo "sym-link .dotfiles"
 for file in .*; do
+  echo "${file}";
   if [[ $file == "." || $file == ".." ]]; then
     continue
   fi
@@ -25,5 +28,25 @@ for file in .*; do
   unlink ~/$file > /dev/null 2>&1
   ln -s ~/.dotfiles/homedir/$file ~/$file
 done
+## END Setup dotfiles
+
+popd > /dev/null 2>&1
+pushd config > /dev/null 2>&1
+
+## BEGIN Setup dotfiles
+echo "sym-link config/"
+for dir in *; do
+  echo "${dir}";
+  if [ ! -d "${dir}" ]; then
+    continue
+  fi
+  if [[ -d ~/.config/$dir ]]; then
+      mkdir -p ~/.config_backup/$now
+      mv ~/.config/$dir ~/.config_backup/$now/$dir
+  fi
+  unlink ~/.config/$dir > /dev/null 2>&1
+  ln -s ~/.dotfiles/config/$dir ~/.config/$dir
+done
+## END Setup dotfiles
 
 popd > /dev/null 2>&1
