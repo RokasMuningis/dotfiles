@@ -27,6 +27,7 @@ for file in .*; do
   if [[ $file == "." || $file == ".." ]]; then
     continue
   fi
+  echo "    [.] Copying/updating ${file}"
   if [[ -e ~/$file ]]; then
       mkdir -p ~/.dotfiles_backup/$now
       mv ~/$file ~/.dotfiles_backup/$now/$file
@@ -45,6 +46,7 @@ for dir in *; do
   if [ ! -d "${dir}" ]; then
     continue
   fi
+  echo "    [.] Copying/updating ${dir}"
   if [[ -d ~/.config/$dir ]]; then
       mkdir -p ~/.config_backup/$now
       mv ~/.config/$dir ~/.config_backup/$now/$dir
@@ -53,6 +55,31 @@ for dir in *; do
   ln -s ~/.dotfiles/config/$dir ~/.config/$dir
 done
 ## END Setup dotfiles
+
+## BEGIN Create mopidy
+echo "  [.] Setting up modipy"
+
+echo "    [.] Installing dependencies"
+brew tap mopidy/mopidy >/dev/null 2>&1
+brew install ncmpcpp mopidy mopidy-spotify >/dev/null 2>&1
+ln -s /Library/Frameworks/libspotify.framework/libspotify /usr/local/lib/libspotify.dylib >/dev/null 2>&1
+brew services start mopidy/mopidy/mopidy >/dev/null 2>&1
+
+if [ ! -f ~/.dotfiles/config/mopidy/mopidy.conf ]; then
+  echo "    [.] Creating config"
+  mkdir ~/.dotfiles/config/mopidy
+  touch ~/.dotfiles/config/mopidy/mopidy.conf
+  echo "[mpd]
+hostname = ::
+
+[spotify]
+enabled = true
+username = xxx-xxx-xxx
+password = xxx-xxx-xxx
+client_id = xxx-xxx-xxx
+client_secret = xxx-xxx-xxx
+" >> ~/.dotfiles/config/mopidy/mopidy.conf
+fi
 
 popd > /dev/null 2>&1
 

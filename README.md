@@ -12,3 +12,9 @@ You can place your private configs in `.zsh_private` folder
 
 ## Custom kitty configs
 You can write your custom configs in `kitty_custom.conf` file
+
+## Mopidy
+// Add setup info here
+
+## Screenshots
+![Alt text](screenshots/1.png?raw=true "Title")
