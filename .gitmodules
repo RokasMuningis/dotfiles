@@ -1,0 +1,15 @@
+[submodule "homedir/.vim/pack/rust.vim"]
+	path = homedir/.vim/pack/rust.vim
+	url = git://github.com/rust-lang/rust.vim.git
+[submodule "homedir/.vim/pack/ctrlp.vim"]
+	path = homedir/.vim/pack/ctrlp.vim
+	url = git://github.com/kien/ctrlp.vim.git
+[submodule "homedir/.vim/pack/default/start/gruvbox"]
+	path = homedir/.vim/pack/default/start/gruvbox
+	url = git://github.com/morhetz/gruvbox.git
+[submodule "homedir/.vim/pack/dist/start/vim-airline"]
+	path = homedir/.vim/pack/dist/start/vim-airline
+	url = git://github.com/vim-airline/vim-airline.git
+[submodule "nord-prompt"]
+	path = nord-prompt
+	url = git://github.com/rokasmuningis/nord-prompt.git
