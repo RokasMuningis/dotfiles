@@ -56,31 +56,6 @@ for dir in *; do
 done
 ## END Setup dotfiles
 
-## BEGIN Create mopidy
-echo "  [.] Setting up modipy"
-
-echo "    [.] Installing dependencies"
-brew tap mopidy/mopidy >/dev/null 2>&1
-brew install ncmpcpp mopidy mopidy-spotify >/dev/null 2>&1
-ln -s /Library/Frameworks/libspotify.framework/libspotify /usr/local/lib/libspotify.dylib >/dev/null 2>&1
-brew services start mopidy/mopidy/mopidy >/dev/null 2>&1
-
-if [ ! -f ~/.dotfiles/config/mopidy/mopidy.conf ]; then
-  echo "    [.] Creating config"
-  mkdir ~/.dotfiles/config/mopidy
-  touch ~/.dotfiles/config/mopidy/mopidy.conf
-  echo "[mpd]
-hostname = ::
-
-[spotify]
-enabled = true
-username = xxx-xxx-xxx
-password = xxx-xxx-xxx
-client_id = xxx-xxx-xxx
-client_secret = xxx-xxx-xxx
-" >> ~/.dotfiles/config/mopidy/mopidy.conf
-fi
-
 popd > /dev/null 2>&1
 
 echo "[.] Done!"
