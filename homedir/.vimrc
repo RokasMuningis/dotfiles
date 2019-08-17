@@ -20,3 +20,6 @@ set termencoding=utf-8
 set tabstop=4
 set expandtab
 set shiftwidth=4
+
+" plugins
+set runtimepath^=~/.vim/bundle/ctrlp.vim
