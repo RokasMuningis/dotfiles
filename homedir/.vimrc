@@ -7,7 +7,7 @@ set novisualbell
 set background=dark
 set noshowmode
 set laststatus=2
-colorscheme solarized
+colorscheme gruvbox
 
 filetype plugin indent on
 
@@ -22,8 +22,8 @@ set expandtab
 set shiftwidth=4
 
 " Plugins loading
-set packpath=~/.vim/bundle/
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+set runtimepath^=~/.vim/pack/ctrlp.vim
+
 " CtrlP setup
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
