@@ -21,8 +21,9 @@ set tabstop=4
 set expandtab
 set shiftwidth=4
 
+" Plugins loading
+set packpath=~/.vim/bundle/
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 " CtrlP setup
 let g:ctrlp_show_hidden = 1
-
-" plugins
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
