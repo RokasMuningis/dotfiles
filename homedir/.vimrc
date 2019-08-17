@@ -21,5 +21,8 @@ set tabstop=4
 set expandtab
 set shiftwidth=4
 
+" CtrlP setup
+let g:ctrlp_show_hidden = 1
+
 " plugins
 set runtimepath^=~/.vim/bundle/ctrlp.vim
