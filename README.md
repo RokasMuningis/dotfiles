@@ -12,3 +12,8 @@ You can place your private configs in `.zsh_private` folder
 
 ## Custom kitty configs
 You can write your custom configs in `kitty_custom.conf` file
+
+## Setting up YouCompleteMe
+```bash
+cd ~/.vim/pack/YouCompleteMe && ./install.py --racer-completer --rust-completer
+```
